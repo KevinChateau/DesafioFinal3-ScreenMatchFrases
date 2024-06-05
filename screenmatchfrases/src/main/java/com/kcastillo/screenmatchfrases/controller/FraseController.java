@@ -18,6 +18,6 @@ public class FraseController {
 
     @GetMapping("/frases")
     public List<FraseDTO> ObtenerTodasFrases() {
-        return null;
+        return service.obtenerFrases();
     }
 }
