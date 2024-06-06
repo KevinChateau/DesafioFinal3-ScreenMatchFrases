@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,6 +21,10 @@ public class FraseService {
         return frases.stream()
                 .map(f -> new FraseDTO(f.getTitulo(), f.getFrase(), f.getPersonaje(), f.getPoster()))
                 .collect(Collectors.toList());
+    }
+    public FraseDTO obtenerFraseAleatoria(){
+        Frase f = repository.obtenerFraseAleatoria();
+        return new FraseDTO(f.getTitulo(), f.getFrase(), f.getPersonaje(), f.getPoster());
     }
 
 }

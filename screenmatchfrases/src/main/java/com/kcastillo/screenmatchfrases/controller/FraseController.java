@@ -17,7 +17,8 @@ public class FraseController {
     private FraseService service;
 
     @GetMapping("/frases")
-    public List<FraseDTO> ObtenerTodasFrases() {
-        return service.obtenerFrases();
+    public FraseDTO ObtenerTodasFrases() {
+        return service.obtenerFraseAleatoria();
     }
+
 }
